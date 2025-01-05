@@ -21,7 +21,7 @@
 #include "pia6820.h"
 
 static unsigned char charac[1024], screenTbl[960];
-static int indexX, indexY, pixelSize = 2, _scanlines = 0, terminalSpeed = 60;
+static int indexX, indexY, pixelSize = 2, _scanlines = 0, terminalSpeed = 120;
 static long lastTime;
 static int _fullscreen = 0;
 static int _blinkCursor = 1, _blockCursor = 0;
@@ -142,13 +142,13 @@ static void drawCharac(int xPosition, int yPosition, unsigned char r, unsigned c
 	SDL_Rect rect;
 	int k, l;
 
-	for (k = 0; k < 8; k++)
+	for (k = 0; k < 7; k++)
 	{
-		for (l = 1; l < 8; l++)
+		for (l = 1; l < 6; l++)
 		{
 			if (charac[characNumber * 8 + k] & (0x01 << l))
 			{
-				rect.x = xPosition + pixelSize * (l - 1);
+				rect.x = xPosition + pixelSize * l;
 				rect.y = yPosition + pixelSize * k;
 				rect.w = pixelSize;
 				rect.h = pixelSize - (_scanlines ? 1 : 0);
