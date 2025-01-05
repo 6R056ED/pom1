@@ -230,7 +230,7 @@ void redrawScreen(void)
 			xPosition = i * pixelSize * 7;
 			yPosition = j * pixelSize * 8;
 				
-			drawCharac(xPosition, yPosition, 0, 255, 0, screenTbl[j * 40 + i]);
+			drawCharac(xPosition, yPosition, 255, 255, 255, screenTbl[j * 40 + i]);
 		}
 	}
 
