@@ -149,7 +149,7 @@ static void drawCharac(int xPosition, int yPosition, unsigned char r, unsigned c
 			if (charac[characNumber * 8 + k] & (0x01 << l))
 			{
 				rect.x = xPosition + pixelSize * l;
-				rect.y = yPosition + pixelSize * k;
+				rect.y = yPosition + pixelSize * (k + 1);
 				rect.w = pixelSize;
 				rect.h = pixelSize - (_scanlines ? 1 : 0);
 
