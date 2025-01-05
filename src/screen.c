@@ -208,7 +208,7 @@ static void drawBlinkingCursor(void)
 		if (clearCursor)
 			SDL_FillRect(screen, &rect, 0);
 		else
-			drawCharac(rect.x, rect.y, 0, 255, 0, (unsigned char)(_blockCursor ? 0x01 : 0x40));
+			drawCharac(rect.x, rect.y, 255, 255, 255, (unsigned char)(_blockCursor ? 0x01 : 0x40));
 
 		SDL_UpdateRect(screen, rect.x, rect.y, rect.w, rect.h);
 			
@@ -235,7 +235,7 @@ void redrawScreen(void)
 	}
 
 	if (!_blinkCursor)
-		drawCharac(indexX * pixelSize * 7, indexY * pixelSize * 8, 0, 255, 0, (unsigned char)(_blockCursor ? 0x01 : 0x40));
+		drawCharac(indexX * pixelSize * 7, indexY * pixelSize * 8, 255, 255, 255, (unsigned char)(_blockCursor ? 0x01 : 0x40));
 
 	SDL_UpdateRect(screen, 0, 0, 0, 0);
 }
